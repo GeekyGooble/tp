@@ -31,6 +31,7 @@ public class UnlinkEventCommand extends Command {
      */
     public UnlinkEventCommand(List<Index> indexes) {
         requireNonNull(indexes);
+        assert !indexes.isEmpty() : "Index list should not be empty";
         this.indexes = indexes;
     }
 
@@ -40,8 +41,11 @@ public class UnlinkEventCommand extends Command {
 
         List<Person> lastShownList = model.getFilteredPersonList();
         List<Index> duplicateIndexes = new ArrayList<>();
+        assert lastShownList != null : "Person list should not be null";
+
 
         for (Index index : indexes) {
+            assert index != null : "Index should not be null";
             if (index.getZeroBased() >= lastShownList.size()) {
                 throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
             }
@@ -55,8 +59,14 @@ public class UnlinkEventCommand extends Command {
 
         List<Person> personsToUnlink = new ArrayList<>();
         for (Index index : indexes) {
-            personsToUnlink.add(lastShownList.get(index.getZeroBased()));
+            Person personToUnlink = lastShownList.get(index.getZeroBased());
+            assert personToUnlink != null : "Person at index should not be null";
+
+            personsToUnlink.add(personToUnlink);
         }
+
+        assert personsToUnlink.size() == indexes.size()
+                : "Number of persons to unlink should match number of indexes";
 
         for (Person personToUnlink : personsToUnlink) {
             Person unlinkedPerson = new Person(
@@ -67,6 +77,7 @@ public class UnlinkEventCommand extends Command {
                     personToUnlink.getTags(),
                     null
             );
+            assert unlinkedPerson != null : "Created person should not be null";
             model.setPerson(personToUnlink, unlinkedPerson);
         }
 
