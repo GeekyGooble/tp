@@ -47,6 +47,7 @@ public class EditEventCommand extends Command {
     public static final String MESSAGE_EDIT_EVENT_SUCCESS = "Edited Event: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
     public static final String MESSAGE_EVENT_NOT_FOUND = "Event not found.";
+    public static final String MESSAGE_NO_EDITS_MADE = "There was no edits made to the event.";
 
     private final EventAlias eventAlias;
     private final EditEventDescriptor editEventDescriptor;
@@ -75,6 +76,10 @@ public class EditEventCommand extends Command {
                 .orElseThrow(() -> new CommandException(MESSAGE_EVENT_NOT_FOUND));
 
         Event editedEvent = createEditedEvent(eventToEdit, editEventDescriptor);
+
+        if (eventToEdit.equals(editedEvent)) {
+            throw new CommandException(MESSAGE_NO_EDITS_MADE);
+        }
 
         assert eventToEdit.isSameEvent(editedEvent);
 
