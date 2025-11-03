@@ -18,7 +18,9 @@ title: Developer Guide
 
 Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
---------------------------------------------------------------------------------------------------------------------
+---
+
+<div style="page-break-after: always;"></div>
 
 ## **Design**
 
@@ -67,6 +69,8 @@ For example, the `Logic` component defines its API in the `Logic.java` interface
 
 The sections below give more details of each component.
 
+<div style="page-break-after: always;"></div>
+
 ### UI component
 
 The **API** of this component is specified in [`Ui.java`](https://github.com/AY2526S1-CS2103T-T10-2/tp/blob/master/src/main/java/seedu/address/ui/Ui.java)
@@ -89,6 +93,8 @@ The `UI` component,
 * listens for changes to `Model` data so that the UI can be updated with the modified data.
 * keeps a reference to the `Logic` component, because the `UI` relies on the `Logic` to execute commands.
 * depends on some classes in the `Model` component, as it displays `Person`, `Event` and `Todo` objects residing in the `Model`.
+
+<div style="page-break-after: always;"></div>
 
 ### Logic component
 
@@ -121,6 +127,8 @@ How the parsing works (for commands which require parsing):
 * When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `AddressBookParser` returns back as a `Command` object.
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
+<div style="page-break-after: always;"></div>
+
 ### Model component
 **API** : [`Model.java`](https://github.com/AY2526S1-CS2103T-T10-2/tp/blob/master/src/main/java/seedu/address/model/Model.java)
 
@@ -134,8 +142,7 @@ The `Model` component,
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
 
-
-
+<div style="page-break-after: always;"></div>
 
 ### Storage component
 
@@ -163,6 +170,8 @@ The `Storage` component,
 Classes used by multiple components are in the `seedu.address.commons` package.
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## **Implementation**
 
@@ -227,6 +236,7 @@ The `UniqueEventList` maintains the internal observable list that JavaFx uses to
 Step 8. After successful addition, a CommandResult is returned with a success message: "New Event added:[formatted event details]". 
 The UI automatically reflects the new event in the event list panel.
 
+<div style="page-break-after: always;"></div>
 
 ### \[Proposed\] Undo/redo feature
 
@@ -315,6 +325,8 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 
 ## **Documentation, logging, testing, configuration, dev-ops**
 
@@ -340,6 +352,8 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 **Value proposition**:
 Provides event planners with a single, organized hub for managing all contacts related to their events, reducing the chaos of scattered information. It ensures quick access to the right people at the right time, helping planners stay in control and deliver seamless, stress-free experiences.
+
+<div style="page-break-after: always;"></div>
 
 ### User stories
 
@@ -368,6 +382,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* `     | event planner | unmark a todo as incomplete    | reopen tasks when needed                                           |
 | `*`      | event planner | edit a todo                    | update a task’s information when details change                    |
 
+<div style="page-break-after: always;"></div>
 
 ### Use cases
 
@@ -776,6 +791,7 @@ Use case ends.
 
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## **Appendix: Planned Enhancements**
 
