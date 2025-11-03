@@ -80,6 +80,8 @@ The **API** of this component is specified in [`Ui.java`](https://github.com/AY2
 
 The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI. Apart from these parts in the class diagram, `MainWindow` also contains a menu bar.
 
+<div style="page-break-after: always;"></div>
+
 The image below shows the `MainWindow` and its labelled parts in the UI:
 
 ![UI of the Main Window](images/UiMainWindow.png)
@@ -119,6 +121,8 @@ How the `Logic` component works:
 1. The command can communicate with the `Model` when it is executed (e.g. to delete a person).<br>
    Note that although this is shown as a single step in the diagram above (for simplicity), in the code it can take several interactions (between the command object and the `Model`) to achieve.
 1. The result of the command execution is encapsulated as a `CommandResult` object which is returned back from `Logic`.
+
+<div style="page-break-after: always;"></div>
 
 Here are the other classes in `Logic` (omitted from the class diagram above) that are used for parsing a user command:
 
@@ -191,6 +195,8 @@ The command implements the following key operations through the `Model` interfac
 These operations are backed by the `AddressBook` which maintains a `UniqueEventList` to ensure no duplicate events exist.
 
 Given below is an example usage scenario and how the add-event mechanism behaves at each step.
+
+<div style="page-break-after: always;"></div>
 
 The following sequence diagram shows how an add-event operation goes through the `Logic` component:
 

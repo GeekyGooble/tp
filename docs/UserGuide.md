@@ -108,7 +108,7 @@ Our modern graphical user interface displays all your information in an organise
   <img src="images/ContactCard.png" alt="Annotated Contact Card" width="400"/>
 </p>
 
-Each contact card will reflect (from top to bottom), the contact's name, tags, phone number, address, email and linked event
+Each contact card will reflect (from top to bottom), the contact's name, tag(s), phone number, address, email and linked event
 
 ### Event Card
 
@@ -116,7 +116,7 @@ Each contact card will reflect (from top to bottom), the contact's name, tags, p
   <img src="images/EventCard.png" alt="Annotated Event Card" width="400"/>
 </p>
 
-Each event card will reflect (from top to bottom), the event's name with alias, event details, start and end time.
+Each event card will reflect (from top to bottom), the event's name with alias, event description, start and end time.
 
 ### Todo card
 
@@ -124,7 +124,7 @@ Each event card will reflect (from top to bottom), the event's name with alias, 
   <img src="images/TodoCard.png" alt="Annotated Todo Card" width="400"/>
 </p>
 
-Each todo card will reflect (from top to bottom), the todo's name, description, linked contact and status.
+Each todo card will reflect (from top to bottom), the todo's name, todo description, linked contact involved and completion status.
 
 ---
 <div style="page-break-after: always;"></div>
@@ -350,8 +350,7 @@ Edits an existing event in the address book. This removes any filters currently 
 
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-an EventAlias cannot be edited in order to enforce uniqueness
-The event alias field included in the field is to identify which specific event you want to amend.
+An EventAlias cannot be edited in order to enforce uniqueness. The event alias field included in the field is to identify which specific event you want to amend.
 </div>
 
 Format: `edit-event ea/EVENT_ALIAS [en/EVENT_NAME] [st/START_DATETIME] [et/END_DATETIME] [d/DESCRIPTION]`
